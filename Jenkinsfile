@@ -15,11 +15,11 @@ pipeline {
                 sh 'git pull https://github.com/yashas123456/terraform-jenkins'
             }
         } 
-        stage('check files') {
-            steps {
-                sh 'cd terraform-jenkins'
-            }
-        }
+//         stage('check files') {
+//             steps {
+//                 sh 'cd terraform-jenkins'
+//             }
+//         }
 //         stage('permission') {
 //             steps {
 //                 sh 'chmod -R 777 *'
@@ -37,7 +37,7 @@ pipeline {
         }
         stage('terraform apply') {
             steps {
-                sh 'terraform plan'
+                sh 'terraform plan --auto-approve'
             }
         }
     }
